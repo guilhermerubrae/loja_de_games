@@ -63,7 +63,8 @@ public class ProdutoController {
 		if (categoriaRepository.existsById(produto.getCategoria().getId()))
 			return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
 
-		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Registro de produto não está localizando no sistema!", null);
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+				"Registro de produto não está localizando no sistema!", null);
 	}
 
 	@PutMapping
@@ -89,4 +90,5 @@ public class ProdutoController {
 		produtoRepository.deleteById(id);
 
 	}
+	
 }

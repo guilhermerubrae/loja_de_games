@@ -27,9 +27,9 @@ public class Categoria {
 	@Size(min = 3, max = 100)
 	private String tipo;
 	
-	@NotBlank(message = "O atributo texto é Obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
-	private String texto;
+	@NotBlank(message = "O atributo marca é Obrigatório!")
+	@Size(min = 0, max = 1000, message = "O atributo marca deve conter no mínimo 10 e no máximo 1000 caracteres")
+	private String marca;
 	
 	@OneToMany (fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
@@ -51,12 +51,12 @@ public class Categoria {
         this.tipo = tipo;
     }
 
-    public String getTexto() {
-        return this.texto;
+    public String getMarca() {
+        return this.marca;
     }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
     
     public List<Produto> getProduto() {
